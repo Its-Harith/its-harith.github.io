@@ -1,33 +1,61 @@
-/* first i started with putting every section that i'm gonna work on "body,header, main, section but empty, so i can understand and structure everything clearly as a begginer */
+/*
+I started by creating colour variables so I can easily change
+the main colours of the website from one place. I chose orange
+for the header because it was one of the first things I noticed
+when looking at the Sculpting Harmony website. 
+*/
 
 :root {
     --orange: #FFB347;
-    --black: black;
-    --cream: #FFFDF7;;
+    --black: #000000;
+    --cream: #FFFDF7;
+    --stone: #E8E4DC;
 }
+
+
+/*
+I removed the default margin from the body so the orange header
+can reach the very edges of the browser. I am also using Arial
+instead of importing an external font because the assignment
+does not allow external CSS libraries or stylesheets.
+*/
 
 body {
     margin: 0;
     background-color: var(--cream);
     color: var(--black);
+    font-family: Arial, sans-serif;
 }
+
 
 header {
     background-color: var(--orange);
-    color: #171717;
+    color: var(--black);
     min-height: 80vh;
     padding: 40px;
-    font-size: 3rem;
-
     position: relative;
+    box-sizing: border-box;
 }
+
+
+/*
+I placed my name in the top-left corner trying to coppy the reference webstie.
+*/
 
 .name {
     position: absolute;
     top: 40px;
     left: 40px;
+    margin: 0;
     font-size: 2rem;
 }
+
+
+/*
+I added simple shapes to the top of the header because I wanted
+to bring some of the playful and artistic feeling from the
+reference website into my own page.
+*/
 
 .design {
     position: absolute;
@@ -35,41 +63,141 @@ header {
     left: 50%;
 }
 
+.circle {
+    width: 90px;
+    height: 90px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+}
+
+.circle.small {
+    width: 25px;
+    height: 25px;
+}
+
+.line {
+    width: 120px;
+    height: 2px;
+    background-color: var(--black);
+    transform: rotate(-20deg);
+}
+
+
+/*
+I positioned the title at the bottom of the orange section
+because I liked how the reference website uses large text
+as an important part of the opening visual.
+*/
+
 .hero-title {
     position: absolute;
     bottom: 50px;
     left: 40px;
     margin: 0;
-    font-size: 2rem;
 }
 
+
+/*
+I used a very large heading to create a strong visual hierarchy.
+*/
 
 header h1 {
     margin: 0;
-    font-size: 8rem;
+    font-size: clamp(4rem, 10vw, 9rem);
     line-height: 0.85;
+    letter-spacing: -0.05em;
 }
 
-header p {
-    margin: 0;
-    font-size: smaller;
+
+/* This controls the smaller text underneath the main title. */
+
+.hero-title p {
+    margin: 20px 0 0;
+    font-size: 1.3rem;
 }
+
+
+/*
+I kept the main content narrower than the full screen because
+very long lines of text can be harder to read. The extra space
+around the content also gives the page a more open feeling.
+*/
 
 main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 80px 40px;
+    box-sizing: border-box;
 }
+
+
+/*
+Each section contains one question and its answer. I used a large
+amount of vertical spacing because I did not want all thirteen
+questions to look like one long block of text.
+*/
 
 section {
-    padding: 60px 0;
-    border-bottom: 1px solid #aaa;
+    padding: 100px 0;
+    position: relative;
 }
+
+
+/*
+I made the questions black and rounded because I wanted them to
+look slightly like chat bubbles. This connects to the idea that
+the page is presenting my responses as a conversation with the
+interactive experience I researched.
+*/
 
 section h2 {
-
+    background-color: var(--black);
+    color: var(--cream);
+    padding: 25px 30px;
+    border-radius: 40px 20px 50px 25px;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: 500;
+    margin: 0 35% 30px 0;
 }
+
+
+/*
+I originally considered using orange for the answers, but it
+made the page feel too bright because the header already uses
+orange. I chose a soft stone colour instead so the answers are
+still separated from the questions without competing with the
+main orange section.
+*/
 
 section p {
-
+    background-color: var(--stone);
+    color: var(--black);
+    padding: 35px;
+    border-radius: 25px 50px 30px 45px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 0 20%;
 }
+
+
+/*
+I moved every second question and answer to the opposite side.
+I did this because having all the bubbles in exactly the same
+position felt repetitive. Alternating them gives the page more
+movement as the user scrolls through the responses.
+*/
+
+section:nth-child(even) h2 {
+    margin-left: 35%;
+    margin-right: 0;
+}
+
+section:nth-child(even) p {
+    margin-left: 0;
+    margin-right: 20%;
+}
+/*
+AI acknowledgement: I used AI while developing this page
+to help me understand CSS properties, troubleshoot problems.
+*/
