@@ -1,0 +1,183 @@
+:root {
+  --bg: #fff1d6;       /* cream wall */
+  --stove: #3b3b3b;
+  --pot: #5a5a5a;
+  --fridge: #cfe8e4;   /* mint fridge */
+  --drawer: #ffffff;
+  --accent: #e4572e;   /* tomato red */
+}
+
+body {
+  background: var(--bg);
+  font-family: sans-serif;
+}
+
+/* ---------- LAYOUT: pot left, fridge right ---------- */
+#kitchen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "stove fridge";
+  gap: 40px;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* ---------- STOVE ---------- */
+#stove {
+  grid-area: stove;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#pot {
+  position: relative;
+  width: 260px;
+  height: 180px;
+  background: var(--pot);
+  border-radius: 0 0 130px 130px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+#pot-back,
+#pot-front {
+  position: absolute;
+  inset: 0;
+  /* later: background-image: url("images/pot-back.svg"); */
+}
+
+#soup {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: #e8d9a8;
+  transition: height 0.4s, background 0.4s;
+}
+
+#pot.over-pot {
+  box-shadow: 0 0 30px var(--accent);
+}
+
+#burner {
+  width: 300px;
+  height: 20px;
+  margin-top: 8px;
+  background: var(--stove);
+  border-radius: 10px;
+}
+
+#dish-name {
+  margin-top: 24px;
+  font-size: 1.5rem;
+}
+
+/* ---------- FRIDGE ---------- */
+#fridge {
+  grid-area: fridge;
+  background: var(--fridge);
+  border-radius: 24px;
+  padding: 24px;
+  align-self: start;
+}
+
+#fridge h2 {
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+/* hide the radio buttons, the labels do the clicking */
+#fridge input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- CLOSED VIEW: grid of squares ---- */
+#drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.drawer-square {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--drawer);
+  border: 3px solid #a9cfc9;
+  border-radius: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.drawer-square .icon { font-size: 2rem; }
+
+.drawer-square:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+/* ---- OPEN VIEW: hidden until a drawer is chosen ---- */
+#drawer-open { display: none; }
+
+#d-none:not(:checked) ~ #drawer-grid { display: none; }
+#d-none:not(:checked) ~ #drawer-open {
+  display: block;
+  min-height: 240px;
+  background: var(--drawer);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.close-drawer {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.drawer-items {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#d-cheese:checked ~ #drawer-open [data-drawer="cheese"],
+#d-dairy:checked  ~ #drawer-open [data-drawer="dairy"],
+#d-veg:checked    ~ #drawer-open [data-drawer="veg"],
+#d-fruit:checked  ~ #drawer-open [data-drawer="fruit"],
+#d-meat:checked   ~ #drawer-open [data-drawer="meat"],
+#d-spice:checked  ~ #drawer-open [data-drawer="spice"] {
+  display: flex;
+}
+
+/* ---------- INGREDIENTS ---------- */
+.ingredient {
+  padding: 10px 14px;
+  background: #fff7ea;
+  border: 2px solid #e8d9b8;
+  border-radius: 10px;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+/* the copy that follows the pointer while dragging */
+.dragging {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 10;
+}

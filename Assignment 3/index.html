@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe Mixer</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="kitchen">
+
+    <!-- LEFT: stove and pot -->
+    <section id="stove">
+      <div id="pot">
+        <div id="pot-back"></div>
+        <div id="soup"></div>
+        <div id="pot-front"></div>
+      </div>
+      <div id="burner"></div>
+      <h2 id="dish-name">Empty pot</h2>
+    </section>
+
+    <!-- RIGHT: fridge -->
+    <section id="fridge">
+
+      <!-- hidden radio buttons: "none" = all drawers closed -->
+      <input type="radio" name="drawer" id="d-none" checked>
+      <input type="radio" name="drawer" id="d-cheese">
+      <input type="radio" name="drawer" id="d-dairy">
+      <input type="radio" name="drawer" id="d-veg">
+      <input type="radio" name="drawer" id="d-fruit">
+      <input type="radio" name="drawer" id="d-meat">
+      <input type="radio" name="drawer" id="d-spice">
+
+      <h2>Fridge</h2>
+
+      <!-- CLOSED VIEW: one square per category -->
+      <div id="drawer-grid">
+        <label for="d-cheese" class="drawer-square"><span class="icon">🧀</span>Cheese</label>
+        <label for="d-dairy"  class="drawer-square"><span class="icon">🥛</span>Dairy</label>
+        <label for="d-veg"    class="drawer-square"><span class="icon">🥕</span>Vegetables</label>
+        <label for="d-fruit"  class="drawer-square"><span class="icon">🍎</span>Fruit</label>
+        <label for="d-meat"   class="drawer-square"><span class="icon">🥩</span>Meat &amp; Fish</label>
+        <label for="d-spice"  class="drawer-square"><span class="icon">🌶️</span>Herbs &amp; Spices</label>
+      </div>
+
+      <!-- OPEN VIEW: only the chosen drawer's ingredients -->
+      <div id="drawer-open">
+        <label for="d-none" class="close-drawer">← Close drawer</label>
+
+        <div class="drawer-items" data-drawer="cheese">
+          <div class="ingredient" data-name="cheddar">🧀 Cheddar</div>
+          <div class="ingredient" data-name="mozzarella">🧀 Mozzarella</div>
+          <div class="ingredient" data-name="parmesan">🧀 Parmesan</div>
+          <div class="ingredient" data-name="feta">🧀 Feta</div>
+        </div>
+
+        <div class="drawer-items" data-drawer="dairy">
+          <div class="ingredient" data-name="milk">🥛 Milk</div>
+          <div class="ingredient" data-name="cream">🥛 Cream</div>
+          <div class="ingredient" data-name="butter">🧈 Butter</div>
+          <div class="ingredient" data-name="egg">🥚 Egg</div>
+        </div>
+
+        <div class="drawer-items" data-drawer="veg">
+          <div class="ingredient" data-name="tomato">🍅 Tomato</div>
+          <div class="ingredient" data-name="carrot">🥕 Carrot</div>
+          <div class="ingredient" data-name="mushroom">🍄 Mushroom</div>
+          <div class="ingredient" data-name="onion">🧅 Onion</div>
+          <div class="ingredient" data-name="potato">🥔 Potato</div>
+          <div class="ingredient" data-name="corn">🌽 Corn</div>
+        </div>
+
+        <div class="drawer-items" data-drawer="fruit">
+          <div class="ingredient" data-name="apple">🍎 Apple</div>
+          <div class="ingredient" data-name="banana">🍌 Banana</div>
+          <div class="ingredient" data-name="lemon">🍋 Lemon</div>
+          <div class="ingredient" data-name="strawberry">🍓 Strawberry</div>
+        </div>
+
+        <div class="drawer-items" data-drawer="meat">
+          <div class="ingredient" data-name="chicken">🍗 Chicken</div>
+          <div class="ingredient" data-name="beef">🥩 Beef</div>
+          <div class="ingredient" data-name="bacon">🥓 Bacon</div>
+          <div class="ingredient" data-name="salmon">🐟 Salmon</div>
+        </div>
+
+        <div class="drawer-items" data-drawer="spice">
+          <div class="ingredient" data-name="chilli">🌶️ Chilli</div>
+          <div class="ingredient" data-name="garlic">🧄 Garlic</div>
+          <div class="ingredient" data-name="basil">🌿 Basil</div>
+          <div class="ingredient" data-name="salt">🧂 Salt</div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
