@@ -241,5 +241,5 @@ clearButton.addEventListener("click", function () {
   Inspiration: Infinite Craft (neal.fun/infinite-craft), Little Alchemy 2 and
   Trello for dragging and combining. MDN Web Docs for pointer events and
   getBoundingClientRect. The ingredient icons are emoji, which are system
-  text, so no image licences are needed. The code is my own.
+  text, so no image licences are needed. I used AI to help write parts of the code and comments.
 */
