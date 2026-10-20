@@ -21,6 +21,7 @@
       <h2 id="dish-name">Empty pot</h2>
       <ul id="pot-list"></ul>
 <button id="cook">Cook!</button>
+<p id="note">Only some recipes are real. Other mixes get a made-up name.</p>
 <button id="clear">Empty pot</button>
     </section>
 
@@ -37,6 +38,7 @@
       <input type="radio" name="drawer" id="d-spice">
 
       <h2>Fridge</h2>
+      <p id="instructions">Open a drawer, drag ingredients into the pot, then press Cook!</p>
 
       <!-- CLOSED VIEW: one square per category -->
       <div id="drawer-grid">
@@ -53,6 +55,8 @@
         <label for="d-none" class="close-drawer">← Close drawer</label>
 
         <div class="drawer-items" data-drawer="cheese">
+            <div class="ingredient" data-name="halloumi">🧀 Halloumi</div>
+            <div class="ingredient" data-name="brie">🧀 Brie</div>
           <div class="ingredient" data-name="cheddar">🧀 Cheddar</div>
           <div class="ingredient" data-name="mozzarella">🧀 Mozzarella</div>
           <div class="ingredient" data-name="parmesan">🧀 Parmesan</div>
@@ -60,6 +64,7 @@
         </div>
 
         <div class="drawer-items" data-drawer="dairy">
+          <div class="ingredient" data-name="yoghurt">🥛 Yoghurt</div>
           <div class="ingredient" data-name="milk">🥛 Milk</div>
           <div class="ingredient" data-name="cream">🥛 Cream</div>
           <div class="ingredient" data-name="butter">🧈 Butter</div>
@@ -67,6 +72,12 @@
         </div>
 
         <div class="drawer-items" data-drawer="veg">
+            <div class="ingredient" data-name="broccoli">🥦 Broccoli</div>
+            <div class="ingredient" data-name="capsicum">🫑 Capsicum</div>
+            <div class="ingredient" data-name="cucumber">🥒 Cucumber</div>
+            <div class="ingredient" data-name="lettuce">🥬 Lettuce</div>
+            <div class="ingredient" data-name="eggplant">🍆 Eggplant</div>
+            <div class="ingredient" data-name="pumpkin">🎃 Pumpkin</div>
           <div class="ingredient" data-name="tomato">🍅 Tomato</div>
           <div class="ingredient" data-name="carrot">🥕 Carrot</div>
           <div class="ingredient" data-name="mushroom">🍄 Mushroom</div>
@@ -76,6 +87,11 @@
         </div>
 
         <div class="drawer-items" data-drawer="fruit">
+            <div class="ingredient" data-name="orange">🍊 Orange</div>
+            <div class="ingredient" data-name="grapes">🍇 Grapes</div>
+            <div class="ingredient" data-name="blueberry">🫐 Blueberry</div>
+            <div class="ingredient" data-name="pineapple">🍍 Pineapple</div>
+            <div class="ingredient" data-name="avocado">🥑 Avocado</div>
           <div class="ingredient" data-name="apple">🍎 Apple</div>
           <div class="ingredient" data-name="banana">🍌 Banana</div>
           <div class="ingredient" data-name="lemon">🍋 Lemon</div>
@@ -83,6 +99,9 @@
         </div>
 
         <div class="drawer-items" data-drawer="meat">
+            <div class="ingredient" data-name="shrimp">🦐 Shrimp</div>
+            <div class="ingredient" data-name="sausage">🌭 Sausage</div>
+            <div class="ingredient" data-name="lamb">🍖 Lamb</div>
           <div class="ingredient" data-name="chicken">🍗 Chicken</div>
           <div class="ingredient" data-name="beef">🥩 Beef</div>
           <div class="ingredient" data-name="bacon">🥓 Bacon</div>
@@ -90,6 +109,11 @@
         </div>
 
         <div class="drawer-items" data-drawer="spice">
+            <div class="ingredient" data-name="rice">🍚 Rice</div>
+            <div class="ingredient" data-name="bread">🍞 Bread</div>
+            <div class="ingredient" data-name="pasta">🍝 Pasta</div>
+            <div class="ingredient" data-name="honey">🍯 Honey</div>
+            <div class="ingredient" data-name="peanut">🥜 Peanut</div>
           <div class="ingredient" data-name="chilli">🌶️ Chilli</div>
           <div class="ingredient" data-name="garlic">🧄 Garlic</div>
           <div class="ingredient" data-name="basil">🌿 Basil</div>

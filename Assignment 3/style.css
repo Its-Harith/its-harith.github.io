@@ -181,3 +181,97 @@ body {
   transform: translate(-50%, -50%) scale(1.1);
   z-index: 10;
 }
+
+#instructions {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* ---------- QUICK POLISH ---------- */
+body {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #3a2a20;
+}
+
+#instructions {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+/* stove */
+#pot {
+  border: 6px solid #2f2f2f;
+  background: #6b6b6b;
+  box-shadow: inset 0 14px 0 rgba(255, 255, 255, 0.15);
+}
+
+#burner {
+  background: linear-gradient(#4a4a4a, #2a2a2a);
+  height: 28px;
+  border-radius: 6px 6px 14px 14px;
+}
+
+#dish-name {
+  background: var(--accent);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 1.4rem;
+}
+
+#pot-list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 360px;
+}
+
+#pot-list li {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 2px solid #e8d9b8;
+  list-style: none;
+}
+
+/* buttons */
+#cook, #clear {
+  margin: 14px 6px 0;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+#cook { background: var(--accent); color: white; }
+#clear { background: #fff; color: #3a2a20; border: 2px solid #e8d9b8; }
+#cook:hover, #clear:hover { transform: scale(1.06); }
+
+/* fridge */
+#fridge {
+  border: 6px solid #a9cfc9;
+  box-shadow: 0 8px 0 #8fb8b1;
+}
+
+.drawer-square {
+  box-shadow: 0 4px 0 #a9cfc9;
+}
+
+.ingredient {
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.ingredient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 0 #e8d9b8;
+}
