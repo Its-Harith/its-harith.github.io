@@ -130,6 +130,7 @@ function makeName() {
 */
 ingredients.forEach(function (item) {
   item.addEventListener("pointerdown", function (event) {
+    event.preventDefault();
     dragged = item.dataset.name;
 
     copy = item.cloneNode(true);
