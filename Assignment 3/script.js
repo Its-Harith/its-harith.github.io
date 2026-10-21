@@ -141,7 +141,6 @@ ingredients.forEach(function (item) {
   });
 });
 
-event.preventDefault();
 /*
   DRAG
   The copy follows the pointer. The pot glows to show the player that an
