@@ -46,7 +46,7 @@ const colours = {
   pineapple: "#f2cf4a", avocado: "#8fb04a",
   shrimp: "#f4a58a", sausage: "#b5654a", lamb: "#9c4a3a",
   rice: "#f5f0e1", bread: "#d9a860", pasta: "#f1d98a",
-  honey: "#e7a82a", peanut: "#c99a62"
+  honey: "#e7a82a", peanut: "#c99a62",
   cheddar: "#f6c344", mozzarella: "#f5efe0", parmesan: "#f0dca0", feta: "#f2f2ec",
   milk: "#fbfbf7", cream: "#f6ecd2", butter: "#f7dc6f", egg: "#f5d76e",
   tomato: "#e4572e", carrot: "#f08a24", mushroom: "#a88b73", onion: "#e8d3a5",
@@ -58,11 +58,11 @@ const colours = {
 };
 
 const recipes = [
-      { name: "Fried rice", needs: ["rice", "egg"] },
+  { name: "Fried rice", needs: ["rice", "egg"] },
   { name: "Shrimp pasta", needs: ["shrimp", "pasta"] },
   { name: "Greek salad", needs: ["cucumber", "feta", "tomato"] },
   { name: "Cheese toastie", needs: ["bread", "cheddar"] },
-  { name: "Honey yoghurt bowl", needs: ["yoghurt", "honey", "blueberry"] }
+  { name: "Honey yoghurt bowl", needs: ["yoghurt", "honey", "blueberry"] },
   { name: "Fresh pasta dough", needs: ["flour", "egg"] },
   { name: "Omelette", needs: ["egg", "cheddar"] },
   { name: "Tomato soup", needs: ["tomato", "onion", "garlic"] },
